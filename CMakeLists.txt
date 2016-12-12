@@ -12,3 +12,4 @@ project(ChristmanGarland C CXX)
 link_directories(${CMAKE_CURRENT_LIST_DIR}/libs)
 
 add_subdirectory(blink)
+add_subdirectory(garland)
