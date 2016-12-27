@@ -2,8 +2,8 @@
 
 #include "FastLED.h"
 
-#define NUM_LEDS 5
-#define MAX_VALUE 200
+#define NUM_LEDS 46
+#define MAX_VALUE 252
 
 struct Star {
     CHSV color = CHSV(0, 255, 0);
@@ -15,7 +15,7 @@ CRGB leds[NUM_LEDS];
 
 void setup(void) {
 
-    for (int i = 0; i < NUM_LEDS; i++) {
+    for (uint8_t i = 0; i < NUM_LEDS; i++) {
         stars[i].color.hue = random8();
         stars[i].color.value = random8(MAX_VALUE);
         stars[i].growing = random8() > 128;
@@ -26,7 +26,7 @@ void setup(void) {
 
 void loop(void) {
 
-    for (int i = 0; i < NUM_LEDS; i++) {
+    for (uint8_t i = 0; i < NUM_LEDS; i++) {
 
         Star &star = stars[i];
         CHSV &color = star.color;
@@ -47,6 +47,6 @@ void loop(void) {
     }
 
     FastLED.show();
-    delay(20);
+    delay(30);
 
 }
